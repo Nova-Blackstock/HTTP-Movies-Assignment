@@ -3,6 +3,9 @@ import { Route } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
+import MovieForm from './components/MovieForm';
+import UpdateMovieForm from './components/UpdateMovieForm';
+
 import axios from 'axios';
 
 const App = () => {
@@ -34,6 +37,11 @@ const App = () => {
 
       <Route path="/movies/:id">
         <Movie addToSavedList={addToSavedList} />
+      </Route>
+
+      <Route path="/movie-form" component={MovieForm} />
+      <Route path="/update-movie/:id">
+        <UpdateMovieForm setMovieList={setMovieList}/>
       </Route>
     </>
   );
